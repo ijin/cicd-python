@@ -15,7 +15,8 @@ jobs:
         uses: actions/checkout@v3
 
       - name: simple test
-        run: [ -f tests/requirements2.txt ] && echo hi
+        run: if [ -f tests/requirements2.txt ] ; then echo hi; fi
+        #run: [ -f tests/requirements2.txt ] && echo hi
 
       - name: Extract Python version from common.env
         id: get-python-runtime
