@@ -33,3 +33,8 @@ jobs:
       - name: pip version
         if: steps.get-python-runtime.outputs.python_runtime != ''
         run: pip -V
+
+      - name: Install dependencies if tests/requirements.txt exists
+        run: test -f tests/requirements.txt && pip install -r tests/requirements.txt
+
+      - run: pip list
