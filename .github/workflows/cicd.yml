@@ -17,6 +17,8 @@ jobs:
       - name: Extract Python version from common.env
         id: get-python-runtime
         run: |
+          pwd
+          ls -alh
           if [ -f vars/common.env ]; then
             PYTHON_RUNTIME=$(sed -n 's/^runtime="python\([0-9.]*\)".*/\1/p' vars/common.env)
           else
