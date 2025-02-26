@@ -14,6 +14,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: simple test
+        run: test -f tests/requirements2.txt && echo hi
+
       - name: Extract Python version from common.env
         id: get-python-runtime
         run: |
